@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 int findGCD(int a, int b) {
-    while (b != 0)  {
+    while (b != 0) {
         int temp = b;
         b = a % b;
         a = temp;
-   }
+    }
     return a;
 }
 
-int findLCM(int arr[], int n){
+int findLCM(int arr[], int n) {
     int result = arr[0];
     for (int i = 1; i < n; i++) {
         int gcd = findGCD(result, arr[i]);
@@ -26,11 +26,11 @@ int main() {
     int numbers[n];
     printf("Введіть %d натуральних чисел, розділених пробілом: ", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &numbers[i])
+        scanf("%d", &numbers[i]);
     }
 
-    int lcm = findLCM(numbers , n);
+    int lcm = findLCM(numbers, n);
     printf("Найменше спільне кратне: %d\n", lcm);
 
-    return lcm;  // 
+    return lcm; // 
 }
